@@ -12,4 +12,14 @@ const mix = require('laravel-mix');
  */
 
 mix.js('resources/js/app.js', 'public/js')
-    .sass('resources/sass/app.scss', 'public/css');
+    .js("resources/js/main.js","public/js")
+    .sass('resources/sass/app.scss', 'public/css')
+    .sass('resources/sass/style.scss', 'public/css')
+    .browserSync({
+      proxy: {
+          target: "http://127.0.0.1:8001",
+      },
+      files: [
+          'resources/views/layouts/base.blade.php',
+      ],
+  });

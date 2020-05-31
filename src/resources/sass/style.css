@@ -1,0 +1,65 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  height: 6rem;
+  width: 100%;
+  background: #85ceeb;
+  border-bottom: 0.5rem ridge #85ceeb;
+}
+
+header .left a {
+  font-size: 3rem;
+  text-decoration: none;
+  color: #000;
+  line-height: 6rem;
+  padding-left: 1rem;
+  cursor: pointer;
+}
+
+header .right .hambtn {
+  height: 100%;
+  width: 8rem;
+  margin-right: 2rem;
+  position: relative;
+  cursor: pointer;
+}
+
+header .right .hambtn span {
+  position: absolute;
+  background: #000;
+  height: 0.3rem;
+  width: 4rem;
+  top: 50%;
+  transition: 0.4s;
+}
+
+header .right .hambtn span:nth-child(1) {
+  transform: translateY(-1.2rem);
+}
+
+header .right .hambtn span:nth-child(3) {
+  transform: translateY(1.2rem);
+}
+
+header .right .hambtn span.open:nth-child(1) {
+  transform: rotate(45deg);
+}
+
+header .right .hambtn span.open:nth-child(2) {
+  visibility: hidden;
+  transition: 0.2s;
+}
+
+header .right .hambtn span.open:nth-child(3) {
+  transform: rotate(-45deg);
+}

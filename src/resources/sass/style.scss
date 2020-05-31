@@ -1,0 +1,190 @@
+@import '~bootstrap/scss/bootstrap';
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html {
+    font-size: 62.5%;
+}
+//header
+header {
+    z-index:100000;
+    display: flex;
+    position:fixed;
+    top:0;
+    left:0;
+    justify-content: space-between;
+    height: 6rem;
+    width: 100%;
+    background: rgb(133, 206, 235);
+    border-bottom: 0.5rem ridge rgb(133, 206, 235);
+    .left {
+            line-height: 6rem;
+            margin-left: 3rem;
+        a {
+            font-size: 3rem;
+            text-decoration: none;
+            color: #000;
+            cursor: pointer;
+            @media screen and (max-width:500px){
+                font-size:1.5rem;
+            }
+        }
+    }
+    .right {
+        line-height:5rem;
+        margin-right:3rem;
+        .user{
+            list-style:none;
+            display:flex;
+            &__login,&__register,&__menu{
+                margin: 0 .5rem;
+                a{
+                    font-size:2rem;
+                    text-decoration:none;
+                    @media screen and (max-width:500px){
+                        font-size:1.5rem;
+                    }
+                }
+                &-list{
+                    background:#eee;
+                    // z-index:100000000000000000000000;
+                    list-style:none;
+                    li{
+                            height:3rem;
+                            width:100%;
+                            border:.1rem solid #000;
+                            line-height:3rem;
+                            text-align:center;  
+                        a{
+                            font-size:1rem;
+                        }
+                    }
+                    li+li{
+                        border-top:none;
+                    }
+                }
+            }
+        }
+    }
+}
+//header end
+
+//
+main{
+    // margin:0 10rem;
+    margin:10rem 10rem;
+    @media screen and (max-width:500px){
+        margin:3rem 3rem;
+    }
+}
+
+//home
+.common{
+    margin-top:3rem;
+
+    .list{
+        &-enter-active{
+            opacity: 0;
+            transform: translateX(50px);
+            transition: {
+                property       : transform, opacity;
+                duration       : 0.6s;
+                timing-function: cubic-bezier(0.77, 0, 0.175, 1);
+                delay:          0s;
+            }
+        }
+        &-enter-to{
+            opacity: 1;
+            transform: translateX(0);
+        }
+        &-leave-active{
+            opacity: 1;
+            transform: translateX(0);
+            transition: {
+                property       : transform, opacity;
+                duration       : 0.6s;
+                timing-function: cubic-bezier(0.77, 0, 0.175, 1);
+                delay:          0s;
+            }
+        }
+        &-leave-to{
+            opacity: 0;
+            transform: translateX(50px);
+        }
+        &-move{
+            transition: {
+                property       : transform;
+                duration       : 0.6s;
+                timing-function: cubic-bezier(0.77, 0, 0.175, 1);
+                delay          : 0s;
+            }
+        }
+    }
+}
+.modal{
+    display:flex;
+    justify-content: center;
+    align-items:center;
+    min-height:100vh;
+    background:rgba(0,0,0,0.5);
+    &__content{
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;;
+        align-items:center;
+        background:beige;
+        height:80%;
+        width:60%;
+        &-close{
+            position: absolute;
+            top:2rem;
+            right:3rem;
+            padding:.5rem;
+            font-size:.5rem;
+        }
+        &-form{
+            width:80%;
+        }
+    }
+}
+//home end
+
+//post
+.postpage{
+    display:flex;
+    justify-content: center;
+    align-items:center;
+    min-height:40vh;
+    flex-direction: column;
+    h1{
+        margin:3rem 0;
+    }
+    .form{
+        width:60%;
+        border:.1rem solid gray;
+        form{
+            margin:5rem;
+            small{
+                color:red;
+            }
+            .button{
+                width:100%;
+                margin:0 0 0 80%;
+            }
+        }
+    }
+}
+//post end
+
+//login reset
+.container{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    min-height:30vh;
+}
+//login reset end
